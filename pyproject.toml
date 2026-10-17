@@ -1,0 +1,31 @@
+[project]
+name = "test-langgraph"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Chaitanya Sawant", email = "chaitanyasawant05072001@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.143.3",
+    "langchain>=1.4.6",
+    "langchain-google-genai>=4.4.2",
+    "langgraph-checkpoint-postgres>=3.2.0",
+    "pydantic-settings>=2.16.0",
+    "psycopg[binary]>=3.2",
+]
+
+[project.scripts]
+test-langgraph = "main:main"
+dev = "main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.package-dir]
+"" = "src"
