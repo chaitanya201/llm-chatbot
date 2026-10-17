@@ -11,9 +11,9 @@ class ChatData(BaseModel):
 def start_workflow(data: ChatData, request: Request):
     
     res = request.app.state.graph.invoke({'prompt': data.prompt},{'configurable':{
-        "thread_id": "test_1"
+        "thread_id": "test_3"
     }})
     print("values", request.app.state.graph.get_state({'configurable':{
-        "thread_id": "test_1"
+        "thread_id": "test_3"
     }}).values)
-    return res["messages"][-1]
+    return res
